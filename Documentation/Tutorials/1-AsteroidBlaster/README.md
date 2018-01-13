@@ -17,7 +17,7 @@ git clone https://github.com/JohnSundell/ImagineEngine.git
 Then open the playground workspace for this tutorial, which contains Imagine Engine as well as the graphics that we'll be using:
 
 ```
-open ImagineEngine/Documentation/Tutorials/1-AsteroidBlaster/AsteroidBlaster.xcworkspace
+open ImagineEngineTutorials/Documentation/Tutorials/1-AsteroidBlaster/AsteroidBlaster.xcworkspace
 ```
 
 You should now have an empty playground open. Hit ⌘+B to compile Imagine Engine for the iOS simulator.
@@ -122,10 +122,7 @@ We want to create a new asteroid every 2 seconds, at a random X coordinate. We t
 To register delayed or repeated events, we'll use our scene's `timeline`. Rather than using `DispatchQueue` or `Timer`, in an Imagine Engine game it's recommended to use the `Timeline` API. This enables the engine to batch multiple events together for optimal performance, and to have your delayed or repeated code executed in sync with the engine's own updates. Let's start by creating a new asteroid actor every 2 seconds:
 
 ```swift
-timeline.repeat(withInterval: 2) { [weak self] in
-    guard let scene = self else {
-        return
-    }
+timeline.repeat(withInterval: 2, using: self) { scene in
 
     let asteroid = Actor()
     asteroid.animation = Animation(name: "Asteroid", frameCount: 1, frameDuration: 0)
