@@ -11,7 +11,7 @@ In this tutorial, we're going to build a simple game called *Asteroid Blaster*, 
 To code along this tutorial, start by cloning the Imagine Engine repo to your machine, if you haven't done so already:
 
 ```
-git clone https://github.com/JohnSundell/ImagineEngine.git
+git clone https://github.com/lcs-ics2o-2017/ImagineEngineTutorials.git
 ```
 
 Then open the playground workspace for this tutorial, which contains Imagine Engine as well as the graphics that we'll be using:
